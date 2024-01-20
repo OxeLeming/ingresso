@@ -9,21 +9,38 @@ function comprar() {
         case "inferior":
             if(disponibilidade > 0){
                 disponibilidade -= quantidade
-                quantiaDisponivel.textContent = disponibilidade;
-            }
+                if(disponibilidade <= -1){
+                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
+                } else{
+                    quantiaDisponivel.textContent = disponibilidade;
+                }
+            } else{
+                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
+            } 
             break;
         case "superior":
             if(disponibilidade > 0){
                 disponibilidade -= quantidade
-                quantiaDisponivel.textContent = disponibilidade;
-            }
+                if(disponibilidade <= -1){
+                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
+                } else{
+                    quantiaDisponivel.textContent = disponibilidade;
+                }
+            } else{
+                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
+            } 
             break;
         case "pista":
             if(disponibilidade > 0){
                 disponibilidade -= quantidade
-                quantiaDisponivel.textContent = disponibilidade;
-            }
+                if(disponibilidade <= -1){
+                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
+                } else{
+                    quantiaDisponivel.textContent = disponibilidade;
+                }
+            } else{
+                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
+            } 
             break;
     }
 }
-//Diminuir quantidade disponível 
