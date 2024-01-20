@@ -7,40 +7,24 @@ function comprar() {
 
     switch (tipoIngresso) {
         case "inferior":
-            if(disponibilidade > 0){
-                disponibilidade -= quantidade
-                if(disponibilidade <= -1){
-                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
-                } else{
-                    quantiaDisponivel.textContent = disponibilidade;
-                }
-            } else{
-                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
-            } 
-            break;
         case "superior":
-            if(disponibilidade > 0){
-                disponibilidade -= quantidade
-                if(disponibilidade <= -1){
-                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
-                } else{
-                    quantiaDisponivel.textContent = disponibilidade;
-                }
-            } else{
-                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
-            } 
-            break;
         case "pista":
-            if(disponibilidade > 0){
-                disponibilidade -= quantidade
-                if(disponibilidade <= -1){
-                    alert(`Número de ingressos ultrapassa a quantidade disponível`);
-                } else{
-                    quantiaDisponivel.textContent = disponibilidade;
-                }
-            } else{
-                alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
-            } 
+            comparar(tipoIngresso, quantidade, quantiaDisponivel, disponibilidade);
             break;
+    }
+}
+
+
+function comparar(tipoIngresso, quantidade, quantiaDisponivel, disponibilidade) {
+
+    if (disponibilidade > 0) {
+        disponibilidade -= quantidade
+        if (disponibilidade <= -1) {
+            alert(`Número de ingressos ultrapassa a quantidade disponível`);
+        } else {
+            quantiaDisponivel.textContent = disponibilidade;
+        }
+    } else {
+        alert(`Ingressos do tipo ${tipoIngresso} foram esgotados`)
     }
 }
